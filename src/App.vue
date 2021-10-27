@@ -1,10 +1,31 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <el-config-provider local="zh-cn">
+        <router-view v-show="getThemeConfig.lockScreenTime !== 0" />
+<!--        <LockScreen v-if="getThemeConfig.isLockScreen" />-->
+    </el-config-provider>
 </template>
+<script lang="ts">
+    import { defineComponent, computed } from 'vue'
+    import { useStore } from '/@/store';
+    export default defineComponent({
+        name: 'app',
+        setup() {
+            // 获取store，便于发请求获取参数
+            const store = useStore()
+
+            // 获取布局配置信息
+            const getThemeConfig = computed(() => {
+                return store.state.themeConfig.themeConfig;
+            });
+
+            return {
+                getThemeConfig,
+
+            }
+        }
+    })
+
+</script>
 
 <style>
 #app {
