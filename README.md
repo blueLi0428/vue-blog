@@ -1,24 +1,28 @@
 # vue-blog
 
-## Project setup
+## 构建项目
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 启动项目
 ```
-npm run serve
+npm run dev
 ```
 
-### Compiles and minifies for production
+### 编译项目
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### eslint校验
 ```
 npm run lint
 ```
 
-### Customize configuration
+### 其他自定义配置参考
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### 样式
+
+参考[handsome](https://www.ihewro.com/archives/489/).
